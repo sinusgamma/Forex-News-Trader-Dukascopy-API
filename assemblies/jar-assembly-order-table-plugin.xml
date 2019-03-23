@@ -1,0 +1,19 @@
+<assembly>
+	<id>full</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<!-- copy compiled class files -->
+		<fileSet>
+			<directory>${project.build.outputDirectory}/jforex/plugin/ordertable</directory>
+			<outputDirectory>jforex/plugin/ordertable</outputDirectory>
+		</fileSet>
+		<!-- optional: copy java source files -->
+		<fileSet>
+			<directory>${project.build.sourceDirectory}/jforex/plugin/ordertable</directory>
+			<outputDirectory>jforex/plugin/ordertable</outputDirectory>
+		</fileSet>
+	</fileSets>	
+</assembly>

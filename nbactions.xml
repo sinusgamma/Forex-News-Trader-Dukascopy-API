@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-multi-process-manager</actionName>
+            <displayName>multi-process-manager</displayName>
+            <goals>
+                <goal>assembly:assembly</goal>
+                <goal>-P</goal>
+                <goal>multi-process-manager</goal>
+            </goals>
+        </action>
+    </actions>

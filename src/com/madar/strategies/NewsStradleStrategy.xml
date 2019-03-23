@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map/>
+    <node name="strat_pref_node">
+      <map/>
+      <node name="presets">
+        <map/>
+        <node name="preset@Custom Preset">
+          <map>
+            <entry key="name" value="Custom Preset"/>
+            <entry key="id" value="Custom Preset"/>
+          </map>
+          <node name="parameter@amount">
+            <map>
+              <entry key="id" value="amount"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="0.001"/>
+            </map>
+          </node>
+          <node name="parameter@breakevenDistance">
+            <map>
+              <entry key="id" value="breakevenDistance"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="0.3"/>
+            </map>
+          </node>
+          <node name="parameter@breakevenTrigger">
+            <map>
+              <entry key="id" value="breakevenTrigger"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="0.0"/>
+            </map>
+          </node>
+          <node name="parameter@calcAmountWithMaxSpread">
+            <map>
+              <entry key="id" value="calcAmountWithMaxSpread"/>
+              <entry key="type" value="boolean"/>
+              <entry key="value" value="false"/>
+            </map>
+          </node>
+          <node name="parameter@closeOnShutDown">
+            <map>
+              <entry key="id" value="closeOnShutDown"/>
+              <entry key="type" value="boolean"/>
+              <entry key="value" value="true"/>
+            </map>
+          </node>
+          <node name="parameter@currencyOfEvent">
+            <map>
+              <entry key="id" value="currencyOfEvent"/>
+              <entry key="type" value="com.madar.library.newsstraddle.MyCurrency"/>
+              <entry key="value" value="USD"/>
+            </map>
+          </node>
+          <node name="parameter@enabledOrderDirection">
+            <map>
+              <entry key="id" value="enabledOrderDirection"/>
+              <entry key="type" value="com.madar.library.newsstraddle.MyOrderDirection"/>
+              <entry key="value" value="BOTHDIRECTION"/>
+            </map>
+          </node>
+          <node name="parameter@eventName">
+            <map>
+              <entry key="id" value="eventName"/>
+              <entry key="type" value="java.lang.String"/>
+              <entry key="value" value="Core CPI mm"/>
+            </map>
+          </node>
+          <node name="parameter@isMultiScenarioRun">
+            <map>
+              <entry key="id" value="isMultiScenarioRun"/>
+              <entry key="type" value="boolean"/>
+              <entry key="value" value="true"/>
+            </map>
+          </node>
+          <node name="parameter@isOCO">
+            <map>
+              <entry key="id" value="isOCO"/>
+              <entry key="type" value="boolean"/>
+              <entry key="value" value="true"/>
+            </map>
+          </node>
+          <node name="parameter@isTest">
+            <map>
+              <entry key="id" value="isTest"/>
+              <entry key="type" value="boolean"/>
+              <entry key="value" value="false"/>
+            </map>
+          </node>
+          <node name="parameter@manageMoney">
+            <map>
+              <entry key="id" value="manageMoney"/>
+              <entry key="type" value="boolean"/>
+              <entry key="value" value="true"/>
+            </map>
+          </node>
+          <node name="parameter@maxSlippage">
+            <map>
+              <entry key="id" value="maxSlippage"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="0.0"/>
+            </map>
+          </node>
+          <node name="parameter@maxSpread">
+            <map>
+              <entry key="id" value="maxSpread"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="4.0"/>
+            </map>
+          </node>
+          <node name="parameter@modifyGap">
+            <map>
+              <entry key="id" value="modifyGap"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="0.1"/>
+            </map>
+          </node>
+          <node name="parameter@pathEventCalendarCSV">
+            <map>
+              <entry key="id" value="pathEventCalendarCSV"/>
+              <entry key="type" value="java.lang.String"/>
+              <entry key="value" value="F:\FOREX\nsresource\news-schedule\run_test.csv"/>
+            </map>
+          </node>
+          <node name="parameter@pathMultiSettingCSV">
+            <map>
+              <entry key="id" value="pathMultiSettingCSV"/>
+              <entry key="type" value="java.lang.String"/>
+              <entry key="value" value="F:\FOREX\nsresource\parameters\multiSettings.csv"/>
+            </map>
+          </node>
+          <node name="parameter@pointsAway">
+            <map>
+              <entry key="id" value="pointsAway"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="4.0"/>
+            </map>
+          </node>
+          <node name="parameter@riskPercent">
+            <map>
+              <entry key="id" value="riskPercent"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="0.01"/>
+            </map>
+          </node>
+          <node name="parameter@secondsAfterNews">
+            <map>
+              <entry key="id" value="secondsAfterNews"/>
+              <entry key="type" value="long"/>
+              <entry key="value" value="10"/>
+            </map>
+          </node>
+          <node name="parameter@secondsAfterNewsOffset">
+            <map>
+              <entry key="id" value="secondsAfterNewsOffset"/>
+              <entry key="type" value="long"/>
+              <entry key="value" value="0"/>
+            </map>
+          </node>
+          <node name="parameter@secondsBeforeModify">
+            <map>
+              <entry key="id" value="secondsBeforeModify"/>
+              <entry key="type" value="long"/>
+              <entry key="value" value="0"/>
+            </map>
+          </node>
+          <node name="parameter@secondsBeforePending">
+            <map>
+              <entry key="id" value="secondsBeforePending"/>
+              <entry key="type" value="long"/>
+              <entry key="value" value="10"/>
+            </map>
+          </node>
+          <node name="parameter@stopLoss">
+            <map>
+              <entry key="id" value="stopLoss"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="1.5"/>
+            </map>
+          </node>
+          <node name="parameter@takeProfit">
+            <map>
+              <entry key="id" value="takeProfit"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="0.0"/>
+            </map>
+          </node>
+          <node name="parameter@testInstrument">
+            <map>
+              <entry key="id" value="testInstrument"/>
+              <entry key="type" value="com.dukascopy.api.Instrument"/>
+              <entry key="value" value="USD/JPY"/>
+            </map>
+          </node>
+          <node name="parameter@trailImmediately">
+            <map>
+              <entry key="id" value="trailImmediately"/>
+              <entry key="type" value="boolean"/>
+              <entry key="value" value="true"/>
+            </map>
+          </node>
+          <node name="parameter@trailingAfter">
+            <map>
+              <entry key="id" value="trailingAfter"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="1.0"/>
+            </map>
+          </node>
+          <node name="parameter@trailingStop">
+            <map>
+              <entry key="id" value="trailingStop"/>
+              <entry key="type" value="double"/>
+              <entry key="value" value="2.0"/>
+            </map>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+</preferences>

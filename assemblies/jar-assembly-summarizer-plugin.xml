@@ -1,0 +1,33 @@
+<assembly>
+	<id>full</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+			<!-- Add here your dependencies, except JForex-API, which will get passed 
+				by the platform -->
+			<includes>
+				<include>*commons*</include>
+			</includes>
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<!-- copy compiled class files -->
+		<fileSet>
+			<directory>${project.build.outputDirectory}/jforex/plugin/summarizer
+			</directory>
+			<outputDirectory>jforex/plugin/summarizer</outputDirectory>
+		</fileSet>
+		<!-- optional: copy java source files -->
+		<fileSet>
+			<directory>${project.build.sourceDirectory}/jforex/plugin/summarizer
+			</directory>
+			<outputDirectory>jforex/plugin/summarizer</outputDirectory>
+		</fileSet>
+	</fileSets>
+
+</assembly>
