@@ -1,1 +1,1 @@
-# Forex-News-Trading-App-Dukascopy-API
+# Forex News Trading App for Dukascopy API
