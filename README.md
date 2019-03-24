@@ -111,5 +111,7 @@ Some example files for proper formating can be found in the example_data_files f
 
 If we start the strategy it will wait for the proper time before the news events to open the positions determined in the multisettings.csv file and manage everything until all of our positions are closed.
 
+![alt text](http://url/to/img.png)
+
 ## Testing mode
 
