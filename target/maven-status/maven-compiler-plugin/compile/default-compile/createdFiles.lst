@@ -3,6 +3,7 @@ singlejartest\Main$1.class
 com\madar\library\newsstraddle\MyInstrumentManagerBasicMultiMap.class
 com\madar\library\newsstraddle\MyEventStateMachine.class
 com\madar\library\newsstraddle\MyInstrumentManager.class
+com\madar\tester\MyPassword.class
 com\madar\library\newsstraddle\MyInstrumentManagerBasicMulti$1.class
 com\madar\dataio\MyPostgresManager.class
 com\madar\library\newsstraddle\MyCurrency.class
