@@ -125,6 +125,16 @@ In the image below you can see an example of a semi-automatically generated scen
 
 ## Testing mode
 
+For multiparameter testing you need to add an enum file to com.madar.tester package:
+```
+package com.madar.tester;
+
+public enum MyPassword {
+    USERNAME, PASSWORD
+}
+```
+These are your Dukascopy account usernames and passwords. If you use DEMO account you have to ask for an other account every two weeks.
+
 The multiparameter testing mode isn't finished, to use it needs altering the code in some places.
 You can test your parameter settings in JForex platform, but if you want to test thousands of scenarios you can run it from my tester.
 I run the tester from Netbeans, and in the near future, I don't plan to do it any other way.
