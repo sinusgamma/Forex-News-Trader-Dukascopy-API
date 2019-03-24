@@ -104,7 +104,9 @@ The News-Trader has two main modes, trading mode and multi-parameter testing mod
 ## Trading mode
 When we trade with the news-trader we use it from the JForex platform of Dukascopy. Under the Navigator tab we can import and compile strategies we want to run. 
 
-The strategy needs two files to trade:
+Our NewsStradleStrategy.java file is in the src.com.madar.strategies folder. The other files needed for the strategy are in the src.com.madar.library.newsstradle folder. We need to import only the NewsStradleStrategy.java file, if our SDK is deployed properly the other dependencies will be found during the compile process.
+
+The strategy needs two resource files to trade:
 run-trade-schedule.csv - this file containes the names of events we want to trade and the time of the event
 multisettings.csv - this file containes the multiple parameter scenarios for the events we want to trade
 Some example files for proper formating can be found in the example_data_files folder, but before running the strategy we can import our own files in the JForex platform.
@@ -116,4 +118,10 @@ In the image bellow you can see an example of a semi-automatically generated sce
 ![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/multisettings.JPG)
 
 ## Testing mode
+You can test your parameter settings in JForex platform, but if you want to test thousands of scenarios you can run it from my tester.
+I run the tester from Netbeans, and in the near future I don't plan to do it any other way.
+At the moment the tester is connected to a database, and without that it isn't possible to run the tester.
+I use a PostgreSQL database where the fxs_news table stores all the economic event from the last years. The calendar can be reached here: https://www.fxstreet.com/economic-calendar
+My table in the database looks like this: 
+
 
