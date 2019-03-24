@@ -1,0 +1,5 @@
+# ignore password enum
+MyPassword.java
+
+# ignore logs
+*.log

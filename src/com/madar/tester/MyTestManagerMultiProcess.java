@@ -28,9 +28,9 @@ public class MyTestManagerMultiProcess {
     //url of the DEMO jnlp
     private static final String JNLPURL = "http://platform.dukascopy.com/demo/jforex.jnlp";
     //user name 2 weeks
-    private static final String USERNAME = "DEMO2Jdyyk";
+    private static final String USERNAME = MyPassword.values()[0].name();
     //password 2 weeks
-    private static final String PASSWORD = "Jdyyk";
+    private static final String PASSWORD = MyPassword.values()[1].name();
 
     private static int firstScenario;
     private static int lastScenario;
