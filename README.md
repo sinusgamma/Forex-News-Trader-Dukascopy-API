@@ -123,5 +123,5 @@ I run the tester from Netbeans, and in the near future I don't plan to do it any
 At the moment the tester is connected to a database, and without that it isn't possible to run the tester.
 I use a PostgreSQL database where the fxs_news table stores all the economic event from the last years. The calendar can be reached here: https://www.fxstreet.com/economic-calendar
 My table in the database looks like this: 
-
+![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/news_database.JPG)
 
