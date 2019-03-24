@@ -2,9 +2,9 @@
 
 ## Main Features
 
-My basic strategy with Forex News Trading App is to exploit the volatility and price jumps during the economic news events, but the model has lots of parameters and options, so it is easy to try out totally different strategies with it.
+My basic strategy with Forex News Trading App is to exploit the volatility and price jumps during the economic news events, but the model has lots of parameters and options, so it is easy to try out totally different strategies with it. To be able to use this trader the user needs some experience with the JForex platform of Dukascopy https://www.dukascopy.com/europe/hu/forex/dealstation/?c1#JForex for trading and some experience with the JForex SDK for testing https://www.dukascopy.com/wiki/en/development/get-started-api/use-jforex-sdk/download-jforex-sdk.
 
-I usually open multiple pending orders (10-80) before the economic news events with different parameters both long and short positions. We need to open the positions before the event, because to open positions on a far away server takes time, and if we try to open the position when the news comes out we are too late. If the parameters are properly set the price jump filles the closest pending order on the long or short side and the positions on the opposite side are closed. With this strategy I don't really care about the numbers of the economic news, because I assume that others get the news milliseconds earlier, and the price moves too much by the time I could check the news itself. The strategy tries to ride the jump of the price. I use different parameters (stopLoss, pointsAway, breakEvenDistance . . .) to decrease my risk, so for example if the jump is too small only a small part of my capital will suffer, because the positions with larger pointsAway distance won't fire. But if the jump is large my closest pending orders can be in profit by the time the further pending orders will be filled.
+I usually open multiple pending orders (10-60) before the economic news events with different parameters both long and short positions. We need to open the positions before the event, because to open positions on a far away server takes time, and if we try to open the position when the news comes out we are too late. If the parameters are properly set the price jump filles the closest pending order on the long or short side and the positions on the opposite side are closed. With this strategy I don't really care about the numbers of the economic news, because I assume that others get the news milliseconds earlier, and the price moves too much by the time I could check the news itself. The strategy tries to ride the jump of the price. I use different parameters (stopLoss, pointsAway, breakEvenDistance . . .) to decrease my risk, so for example if the jump is too small only a small part of my capital will suffer, because the positions with larger pointsAway distance won't fire. But if the jump is large my closest pending orders can be in profit by the time the further pending orders will be filled.
 
 Unfortunatelly during news events we have to face very large slippage, which can ruin this strategy. It is very important to analyse the price movement during the news. I spent more time analyzing these events than building the trading app. I plan to summarize my findings in a later medium.com article. There are lots of events and currency pairs wich most of the time results losses. With a similar strategy is very important to find the events and currency pairs where we have good chance. I only trade a very few events, and mostly only the EUR/USD/JPY pairs.
 
@@ -98,4 +98,18 @@ Unfortunatelly during news events we have to face very large slippage, which can
     double maxSlippage:   
     Dukascopy enables slippagecontrol. If the slippage is too large you can choose to close the position.
 
-    MORE INFO LATER
+The News-Trader has two main modes, trading mode and multi-parameter testing mode.
+
+
+## Trading mode
+When we trade with the news-trader we use it from the JForex platform of Dukascopy. Under the Navigator tab we can import and compile strategies we want to run. 
+
+The strategy needs two files to trade:
+run-trade-schedule.csv - this file containes the names of events we want to trade and the time of the event
+multisettings.csv - this file containes the multiple parameter scenarios for the events we want to trade
+Some example files for proper formating can be found in the example_data_files folder, but before running the strategy we can import our own files in the JForex platform.
+
+If we start the strategy it will wait for the proper time before the news events to open the positions determined in the multisettings.csv file and manage everything until all of our positions are closed.
+
+## Testing mode
+
