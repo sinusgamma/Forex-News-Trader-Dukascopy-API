@@ -111,7 +111,9 @@ Some example files for proper formating can be found in the example_data_files f
 
 If we start the strategy it will wait for the proper time before the news events to open the positions determined in the multisettings.csv file and manage everything until all of our positions are closed.
 
-![alt text](http://url/to/img.png)
+In the image bellow you can see an example of a semi-automatically generated scenario bunch (part of it). This isn't generated with this app, it is written in excel/vba, but shows you how many parameters can you set for your strategies.
+
+![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/multisettings.JPG)
 
 ## Testing mode
 
