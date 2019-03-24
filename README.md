@@ -149,7 +149,7 @@ The database connection is solved in the src.com.madar.dataio.MyPostrgerManager.
 Another file we need for testing is the testparameters.csv, this files contains all values for the parameters we want to test. From this csv the model generates all the meaningful combinations and we get our parameter scenarios. Later in an article, I plan to show how I am choosing the testparameters for an event, but that is a lot of data analysis, here I want only to show how the trader works.
 An excelized version of this file can be seen below, and a csv is in the example_data_files folder:
 
-![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/multisettings.JPG) 
+![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/testparameters.JPG) 
 
 During test we want to test our parameter scenarios on a news events, for example, the US Non-farm Payroll release. The tester searches the Postgres database for these release dates, and tests the parameter scenarios with all the US Non-farm Payroll releases from the past years.
 
