@@ -8,6 +8,10 @@ I usually open multiple pending orders (10-60) before the economic news events w
 
 Unfortunatelly during news events we have to face very large slippage, which can ruin this strategy. It is very important to analyse the price movement during the news. I spent more time analyzing these events than building the trading app. I plan to summarize my findings in a later medium.com article. There are lots of events and currency pairs wich most of the time results losses. With a similar strategy is very important to find the events and currency pairs where we have good chance. I only trade a very few events, and mostly only the EUR/USD/JPY pairs.
 
+## Disclaimer:
+The news-trader was built for personal purpose, it isn't very userfriendly, but if you are building a similar application some parts of the code can be usefull to you. The main trading logic can be fount in src.com.madar.library.newsstradle.MyInstrumentManagerBasicMulti.java file.
+I uploaded the full Dukascopy SDK, but so far I didn't alter the SDK itself. My codes are under src.com.madar, apart from that only the pom.xml was modified directly.
+
 ### Parameters:
 
     boolean closeOnShutDown:
@@ -102,6 +106,7 @@ The News-Trader has two main modes, trading mode and multi-parameter testing mod
 
 
 ## Trading mode
+
 When we trade with the news-trader we use it from the JForex platform of Dukascopy. Under the Navigator tab we can import and compile strategies we want to run. 
 
 Our NewsStradleStrategy.java file is in the src.com.madar.strategies folder. The other files needed for the strategy are in the src.com.madar.library.newsstradle folder. We need to import only the NewsStradleStrategy.java file, if our SDK is deployed properly the other dependencies will be found during the compile process.
@@ -117,11 +122,25 @@ In the image bellow you can see an example of a semi-automatically generated sce
 
 ![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/multisettings.JPG)
 
+
 ## Testing mode
+
+The multiparameter testing mode isn't finished, to use it needs altering the code in some places.
 You can test your parameter settings in JForex platform, but if you want to test thousands of scenarios you can run it from my tester.
 I run the tester from Netbeans, and in the near future I don't plan to do it any other way.
 At the moment the tester is connected to a database, and without that it isn't possible to run the tester.
 I use a PostgreSQL database where the fxs_news table stores all the economic event from the last years. The calendar can be reached here: https://www.fxstreet.com/economic-calendar
 My table in the database looks like this: 
 ![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/news_database.JPG)
+The database connection is solved in the src.com.madar.dataio.MyPostrgerManager.java file.
+
+An other file we need for testing is the testparameters.csv, this files containse all values for the parameters we want to test. From this csv the model generates all the meaningfull combiations and we get our parameter scenarios.
+An excelized version of this file can be seen bellow, and a csv is in the example_data_files folder.
+![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/multisettings.JPG) 
+
+During test we want to test our parameter scenarios on a news events, for example the US Non-farm Payroll release. The tester searches the postgre database for these release dates, and tests the parameter scenarios with all the US Non-farm Payroll releases from the past years.
+
+At the beginning of the test we can check what are we testing:
+![alt text](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/starttest.JPG)
+
 
