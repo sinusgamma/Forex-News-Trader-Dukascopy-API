@@ -9,7 +9,7 @@ I usually open multiple pending orders (10-60) before the economic news events w
 Unfortunately, during news events we have to face very large slippage, which can ruin this strategy. It is very important to analyze the price movement during the news. I spent more time analyzing these events than building the trading app. I plan to summarize my findings in a later medium.com article. There are lots of events and currency pairs wich most of the time results losses. With a similar strategy is very important to find the events and currency pairs where we have a good chance. I only trade a very few events, and mostly only the EUR/USD/JPY pairs.
 
 A trading example in test environment:
-[linkname](https://youtu.be/t5W2jWQOW_Y)
+[![IMAGE ALT TEXT HERE](https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API/blob/master/example_data_files/promotrade.JPG)](https://youtu.be/t5W2jWQOW_Y)
 
 ## Disclaimer:
 The news-trader was built for a personal purpose, it isn't very user-friendly, but if you are building a similar application some parts of the code can be useful to you. The main trading logic can be found in src.com.madar.library.newsstradle.MyInstrumentManagerBasicMulti.java file.
