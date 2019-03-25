@@ -176,6 +176,7 @@ There is an annoying behavior what I didn't remedy so far. During news events, w
 
 Given enough time the next step will be to remedy the "resubmitted order" problem.
 
-
+## Acknowledgement
+The idea of this trader comes from an early version of amazingEA https://www.forexfactory.com/showthread.php?t=541311, but I got only some idea, amazingEA was free for a while, but not open source.
 
 
