@@ -13,7 +13,7 @@ A trading example in test environment, CLICK THE IMAGE:
 
 ## Disclaimer:
 The news-trader was built for a personal purpose, it isn't very user-friendly, but if you are building a similar application some parts of the code can be useful to you. The main trading logic can be found in src.com.madar.library.newsstradle.MyInstrumentManagerBasicMulti.java file.
-I uploaded the full Dukascopy SDK, but so far I didn't alter the SDK itself. My codes are under src.com.madar, apart from that only the pom.xml was modified directly.
+My codes are under src.com.madar.
 
 ## Parameters:
 
