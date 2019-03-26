@@ -108,8 +108,10 @@ public class MyInstrumentManagerBasicMulti extends MyInstrumentManager{
     @Override
     public void manageInstrumentOnMessage(IMessage message) { 
         IOrder order = message.getOrder();
-        removeInactiveOrder(order);
         orderCancelOrder(order);
+        closeResubmittedOrder(message);
+        removeInactiveOrder(order);
+        
     } // end manageInstrumentOnMessage
     
     
@@ -396,6 +398,18 @@ public class MyInstrumentManagerBasicMulti extends MyInstrumentManager{
         }
     }
     
+    // Remove resubmitted orders - Dukascopy automatically resubmits orders, which is very bad for this strategy
+    private void closeResubmittedOrder(IMessage message){
+        if(message.getType() == IMessage.Type.ORDER_SUBMIT_REJECTED){
+            IOrder order = message.getOrder();
+            try {
+                order.close();
+            } catch (JFException ex) {
+                Logger.getLogger(MyInstrumentManagerBasicMulti.class.getName()).log(Level.SEVERE, null, ex);
+                console.getOut().println("EXCEPTION - manageInstrumentOnMessage - didn't manage to close resubmited order");
+            }
+        }
+    }
     
     // makes OCO if isn't triggered so far
     private void orderCancelOrder(IOrder order) {

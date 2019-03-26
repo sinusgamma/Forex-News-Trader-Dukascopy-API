@@ -3,3 +3,8 @@ MyPassword.java
 
 # ignore logs
 *.log
+
+logs/
+rc/
+target/
+assemblies/
