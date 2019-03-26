@@ -4,6 +4,7 @@ MyPassword.java
 # ignore logs
 *.log
 
+# ignore folders
 logs/
 rc/
 target/
