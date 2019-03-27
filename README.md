@@ -4,7 +4,7 @@
 
 My basic strategy with Forex News Trading App is to exploit the volatility and price jumps during the economic news events, but this trading algo has lots of parameters and options, so it is easy to try out totally different strategies with it. To be able to use this trader the user needs some experience with the JForex platform of Dukascopy https://www.dukascopy.com/europe/hu/forex/dealstation/?c1#JForex for trading and some experience with the JForex SDK for testing https://www.dukascopy.com/wiki/en/development/get-started-api/use-jforex-sdk/download-jforex-sdk.
 
-I usually open multiple pending orders (10-60) before the economic news events with different parameters both long and short positions. We need to open the positions before the event because to open positions on a faraway server takes time, and if we try to open the position when the news comes out we are too late. If the parameters are properly set the price jump fills the closest pending order on the long or short side and the positions on the opposite side are closed. With this strategy, I don't really care about the numbers of the economic news, because I assume that others get the news milliseconds earlier, and the price moves too much by the time I could check the news itself. The strategy tries to ride the jump of the price. I use different parameters (stopLoss, pointsAway, breakEvenDistance . . .) to decrease my risk, so for example if the jump is too small only a small part of my capital will suffer because the positions with larger pointsAway distance won't fire. But if the jump is large my closest pending orders can be in profit by the time the further pending orders will be filled.
+I usually open multiple pending orders (10-60) before the economic news events with different parameters both long and short orders. We need to open the orders before the event because to deploy orders on a faraway server takes time, and if we try to deploy the orders when the news comes out we are too late. If the parameters are properly set the price jump fills the closest pending order on the long or short side and the pending orders on the opposite side are closed. With this strategy, I don't really care about the numbers of the economic news, because I assume that others get the news milliseconds earlier, and the price moves too much by the time I could check the news itself. The strategy tries to ride the jump of the price. I use different parameters (stopLoss, pointsAway, breakEvenDistance . . .) to decrease my risk, so for example if the jump is too small only a small part of my capital will suffer because the pending orders with larger pointsAway distance won't fire. But if the jump is large my closest pending orders can be in profit by the time the further pending orders will be filled.
 
 Unfortunately, during news events we have to face very large slippage, which can ruin this strategy. It is very important to analyze the price movement during the news. I spent more time analyzing these events than building the trading app. I plan to summarize my findings in a later medium.com article. There are lots of events and currency pairs wich most of the time results losses. With a similar strategy is very important to find the events and currency pairs where we have a good chance. I only trade a very few events, and mostly only the EUR/USD/JPY pairs.
 
@@ -18,7 +18,7 @@ My codes are under src.com.madar.
 ## Parameters:
 
     boolean closeOnShutDown:
-    If true all position will be closed it the trader or the Dukascopy Jforex platform is closed. 
+    If true all positions and pending orders will be closed if the trader or the Dukascopy Jforex platform is closed. 
     
     String pathEventCalendarCSV:
     Path to file containing the events we want to trade.
@@ -45,7 +45,7 @@ My codes are under src.com.madar.
     Enabled orderdirections: short, long, both.
 
     double pointsAway:
-    How far is originally the pending long position from the ask price or the pending short position from the bid price.
+    How far is originally the long pending order from the ask price or the short pending order from the bid price.
     0.1 is 1 pip.
 
     double takeProfit:
@@ -67,7 +67,7 @@ My codes are under src.com.madar.
     How long are the unfilled pending orders open after news time.
 
     long secondsAfterNewsOffset:
-    If we use multi-parameter strategy with this parameter we can have positions which are open for a longer time than the secondsAfterNews.
+    If we use multi-parameter strategy with this parameter we can have pending orders which are open for a longer time than the secondsAfterNews.
     
     double breakevenTrigger:
     How much in profit must be the position to make a break even action (pull the stopLoss closer). If 0 there is no breakEven.
@@ -88,7 +88,7 @@ My codes are under src.com.madar.
     If true when the first order is filled on one side, every order on the other side is closed.
     
     boolean manageMoney:
-    If true we need only set the riskPercent, every position will be calculated automatically.
+    If true we need only set the riskPercent, every order amount will be calculated automatically.
 
     boolean calcAmountWithMaxSpread:
     Determines if we use the max spread when calculating amounts to trade.
@@ -97,13 +97,13 @@ My codes are under src.com.madar.
     What percent of our capital we want to trade. 0.01 is 1%.
 
     double amount:
-    If we don't use the riskPercent we can set the amount of a position directly.
+    If we don't use the riskPercent we can set the amount of an order directly.
     
     double maxSpread:
-    The maximum spread before news. If the spread is larger than maxSpread the position will be closed before the event. This can help to avoid some very risky situation.
+    The maximum spread before news. If the spread is larger than maxSpread the pending order will be closed before the event. This can help to avoid some very risky situation.
 
     double maxSlippage:   
-    Dukascopy enables slippagecontrol. If the slippage is too large you can choose to close the position.
+    Dukascopy enables slippagecontrol. If the slippage is too large you can choose to close the pending order.
 
 The News-Trader has two main modes, trading mode and multi-parameter testing mode.
 
@@ -119,7 +119,7 @@ run-trade-schedule.csv - this file contains the names of events we want to trade
 multisettings.csv - this file contains the multiple parameter scenarios for the events we want to trade
 Some example files for proper formatting can be found in the example_data_files folder, but before running the strategy we can import our own files in the JForex platform.
 
-If we start the strategy it will wait for the proper time before the news events to open the positions determined in the multisettings.csv file and manage everything until all of our positions are closed.
+If we start the strategy it will wait for the proper time before the news events to open the pending orders determined in the multisettings.csv file and manage everything until all of our positions and pending orders are closed.
 
 In the image below you can see an example of a semi-automatically generated scenario bunch (part of it). This isn't generated with this app, it is written in excel/vba, but shows you how many parameters can you set for your strategies.
 
