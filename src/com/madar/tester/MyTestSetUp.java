@@ -33,7 +33,8 @@ public class MyTestSetUp {
     private String pathEventCalendarCSV = "F:\\FOREX\\nsresource\\news-schedule\\gbp_manufacturingpmi.csv"; // the file containing the events to run if we dont use the database
     private boolean scheduleFromDB = true; // only the tester uses DB for schedule, the strategy will use csv, provided from DB
     private int dbEventLimit = 40;
-    private String earliestDate = "2015-01-01 00:00:00";
+    private String earliestDate = "2014-01-01 00:00:00";
+    private String lastDate = "2017-01-01 00:00:00";
     
     
     // set the period begin and end shift in secs
@@ -241,7 +242,7 @@ public class MyTestSetUp {
         List<MySingleEventHolder> eventList;
         if(scheduleFromDB){
             pathEventCalendarCSV = "F:\\FOREX\\nsresource\\news-schedule\\schedule-from-db-" + this.eventName + ".csv"; // if event data is from DB, then the strategy will run from this pregenerated csv
-            eventList = MyPostgresManager.readForexCalendarDB(eventName, currencyOfEvent, dbEventLimit, earliestDate);
+            eventList = MyPostgresManager.readForexCalendarDB(eventName, currencyOfEvent, dbEventLimit, earliestDate, lastDate);
             try {
                 MyCSVManager.writeEventScheduleToCSV(eventList, pathEventCalendarCSV); // if schedule data for test is from DB must write a csv, because the strategy uses only csv
             } catch (IOException ex) {

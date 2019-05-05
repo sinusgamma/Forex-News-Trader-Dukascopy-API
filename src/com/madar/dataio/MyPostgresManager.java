@@ -43,13 +43,13 @@ public class MyPostgresManager{
     }
  
     
-    public static List<MySingleEventHolder> readForexCalendarDB(String newsname, MyCurrency currency, int limit, String earliestDate){
+    public static List<MySingleEventHolder> readForexCalendarDB(String newsname, MyCurrency currency, int limit, String earliestDate, String lastDate){
         
         List<MySingleEventHolder> collection = new ArrayList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String SQL =    "SELECT news_time, currency, news_name FROM\n" +
                         "(SELECT * FROM newsdata.fxs_news\n" +
-                        "WHERE news_name = '" + newsname + "' AND currency = '" + currency + "' AND news_time > '" + earliestDate + "'\n" +
+                        "WHERE news_name = '" + newsname + "' AND currency = '" + currency + "' AND news_time > '" + earliestDate +  "' AND news_time < '" + lastDate + "'\n" +
                         "ORDER BY news_time DESC\n" +
                         "LIMIT " + limit + ") tempdata\n" +
                         "ORDER BY tempdata.news_time ASC\n" +
