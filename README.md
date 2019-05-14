@@ -179,4 +179,12 @@ Given enough time the next step will be to remedy the "resubmitted order" proble
 ## Acknowledgement
 The idea of this trader comes from an early version of amazingEA https://www.forexfactory.com/showthread.php?t=541311, but I got only some idea, amazingEA was free for a while, but not open source.
 
+## My trade system and the strategy:<br>
+https://medium.com/@istvan.veber/forex-news-trader-785ad0a1394c<br>
+https://medium.com/@istvan.veber/trade-the-news-but-make-your-forex-research-part-2-analysis-and-strategy-e0f2c84a3bdd<br>
+https://github.com/sinusgamma/Forex-News-Trader-Dukascopy-API<br>
+
+## Parameter selection:
+https://www.kaggle.com/sinusgamma/forex-strategy-eda-and-parameter-selection<br>
+https://github.com/sinusgamma/FOREX-strategy-parameter-selection/blob/master/forex-strategy-eda-and-parameter-selection.ipynb<br>
 
