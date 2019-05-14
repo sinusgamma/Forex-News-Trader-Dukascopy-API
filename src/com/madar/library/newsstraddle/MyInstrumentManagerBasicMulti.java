@@ -242,7 +242,7 @@ public class MyInstrumentManagerBasicMulti extends MyInstrumentManager{
 
     } // end trailFilledOrder    
     
-
+    
     // break even after trigger distance
     private void breakEven(IOrder order, MyOrderScenario scenario, int a, double backPrice) {  
         

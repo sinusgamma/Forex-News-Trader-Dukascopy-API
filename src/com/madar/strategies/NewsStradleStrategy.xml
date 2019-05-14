@@ -65,7 +65,7 @@
             <map>
               <entry key="id" value="eventName"/>
               <entry key="type" value="java.lang.String"/>
-              <entry key="value" value="Core CPI mm"/>
+              <entry key="value" value="United States Consumer Price Index Ex Food &amp; Energy YoY"/>
             </map>
           </node>
           <node name="parameter@isMultiScenarioRun">
@@ -121,7 +121,7 @@
             <map>
               <entry key="id" value="pathEventCalendarCSV"/>
               <entry key="type" value="java.lang.String"/>
-              <entry key="value" value="F:\FOREX\nsresource\news-schedule\run_test.csv"/>
+              <entry key="value" value="F:\FOREX\nsresource\news-schedule\run-trade-schedule.csv"/>
             </map>
           </node>
           <node name="parameter@pathMultiSettingCSV">
